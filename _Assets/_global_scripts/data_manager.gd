@@ -8,3 +8,6 @@ var group: Array
 var character_name: String
 
 
+var value_sfx: int
+var value_music: int
+
