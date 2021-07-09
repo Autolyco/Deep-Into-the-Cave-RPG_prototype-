@@ -11,9 +11,8 @@ func _process(delta):
 
 func _trigger_combat():
 	randomize()
-	
 	var trigger_percentage = rand_range(0,100)
-	if trigger_percentage >= 99.85:
+	if trigger_percentage >= 99.9:
 		print("combat")
 
 
@@ -21,6 +20,6 @@ func _trigger_combat():
 
 
 
-func _on_each_step_character():
+func on_each_steps():
 	_trigger_combat()
-
+	pass # Replace with function body.
