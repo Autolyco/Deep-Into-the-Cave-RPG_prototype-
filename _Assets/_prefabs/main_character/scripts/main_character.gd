@@ -6,7 +6,7 @@ signal walk_trigger
 
 const speed = 17.5
 
-var is_pause:bool = true
+var is_pause:bool = false
 var is_talking:bool = false
 
 
@@ -34,16 +34,36 @@ func control_():
 	if Input.is_action_pressed("UP"):
 		movement.y -= speed
 		emit_signal("walk_trigger")
+		
+		_animations("UP")
+		
 	if Input.is_action_pressed("DOWN"):
 		movement.y += speed 
 		emit_signal("walk_trigger")
+		
+		_animations("DOWN")
+		
 	if Input.is_action_pressed("LEFT"):
 		movement.x -= speed 
 		emit_signal("walk_trigger")
+		
+		_animations("LEFT")
+		
 	if Input.is_action_pressed("RIGHT"):
 		movement.x +=  speed
 		emit_signal("walk_trigger")
+		
+		
+		_animations("RIGHT")
 	
+	
+	
+	
+	if Input.is_action_just_released("MENU"):
+		if $CanvasLayer/Interface/menu_interface.visible == true :
+			$CanvasLayer/Interface/menu_interface.visible = false
+		else :
+			$CanvasLayer/Interface/menu_interface.visible = true
 	
 	
 	movement = move_and_slide(movement).normalized()
@@ -52,6 +72,7 @@ func control_talking():
 	print('is talking')
 
 func control_menu():
+	
 	var input_number:int = 0
 	
 	if Input.is_action_pressed("UP"):
@@ -65,6 +86,7 @@ func control_menu():
 		input_number = 0
 	
 	
+	
 	match(input_number):
 		0 :
 			print('ok')
@@ -73,5 +95,23 @@ func control_menu():
 		2:
 			print('ok')
 	
+	
+	if Input.is_action_pressed("MENU"):
+		is_pause = false
 
+func _animations(current_action:String):
+	
+	match(current_action):
+		"LEFT":
+			$Sprite.frame = 3
+		"RIGHT":
+			$Sprite.frame = 1
+		"UP":
+			$Sprite.frame = 0
+		"DOWN":
+			$Sprite.frame = 2
+	
+	
+	
+	pass
 
