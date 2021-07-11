@@ -103,13 +103,10 @@ func _animations(current_action:String):
 	
 	match(current_action):
 		"LEFT":
-			$Sprite.frame = 3
-		"RIGHT":
-			$Sprite.frame = 1
-		"UP":
-			$Sprite.frame = 0
-		"DOWN":
-			$Sprite.frame = 2
+			if movement != Vector2(0,0):
+				$animation_sprite.play("move_left")
+			else :
+				$animation_sprite.play("stance_left")
 	
 	
 	
