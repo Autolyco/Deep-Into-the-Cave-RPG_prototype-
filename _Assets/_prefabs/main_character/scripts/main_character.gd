@@ -11,6 +11,7 @@ var is_talking:bool = false
 
 
 
+
 func _ready():
 	print(str(self.name + 'have been iniatilized sucessfully'))
 
@@ -34,27 +35,24 @@ func control_():
 	if Input.is_action_pressed("UP"):
 		movement.y -= speed
 		emit_signal("walk_trigger")
+		_animations("move_up")
 		
-		_animations("UP")
 		
-	if Input.is_action_pressed("DOWN"):
+	elif Input.is_action_pressed("DOWN"):
 		movement.y += speed 
 		emit_signal("walk_trigger")
-		
-		_animations("DOWN")
-		
-	if Input.is_action_pressed("LEFT"):
+		_animations("move_down")
+	elif Input.is_action_pressed("LEFT"):
 		movement.x -= speed 
 		emit_signal("walk_trigger")
-		
-		_animations("LEFT")
-		
-	if Input.is_action_pressed("RIGHT"):
+		_animations("move_left")
+	elif Input.is_action_pressed("RIGHT"):
 		movement.x +=  speed
 		emit_signal("walk_trigger")
-		
-		
-		_animations("RIGHT")
+		_animations("move_right")
+	
+	
+	
 	
 	
 	
@@ -101,14 +99,8 @@ func control_menu():
 
 func _animations(current_action:String):
 	
-	match(current_action):
-		"LEFT":
-			if movement != Vector2(0,0):
-				$animation_sprite.play("move_left")
-			else :
-				$animation_sprite.play("stance_left")
 	
-	
+	$AnimatedSprite.play(current_action)
 	
 	pass
 
