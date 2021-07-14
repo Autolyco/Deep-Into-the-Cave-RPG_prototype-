@@ -1,4 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://_Assets/_fonts/Caja.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 43
+outline_color = Color( 1, 0.701961, 0, 1 )
+font_data = SubResource( 1 )
 
 [node name="Interface" type="Control"]
 anchor_right = 1.0
@@ -39,7 +48,6 @@ __meta__ = {
 }
 
 [node name="menu_interface" type="Control" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -56,6 +64,68 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="container_lbl" type="Control" parent="menu_interface"]
+anchor_right = 0.187
+anchor_bottom = 0.64
+margin_right = 0.511993
+margin_bottom = -3.05176e-05
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox_menu_container" type="VBoxContainer" parent="menu_interface/container_lbl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 24.0
+margin_bottom = -24.0
+custom_constants/separation = 68
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="INVENTORY" type="Label" parent="menu_interface/container_lbl/vbox_menu_container"]
+margin_right = 192.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 2 )
+text = "INVENTORY"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PARTY" type="Label" parent="menu_interface/container_lbl/vbox_menu_container"]
+margin_top = 100.0
+margin_right = 192.0
+margin_bottom = 132.0
+custom_fonts/font = SubResource( 2 )
+text = "PARTY"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OPTIONS" type="Label" parent="menu_interface/container_lbl/vbox_menu_container"]
+margin_top = 200.0
+margin_right = 192.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 2 )
+text = "OPTIONS"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QUIT" type="Label" parent="menu_interface/container_lbl/vbox_menu_container"]
+margin_top = 300.0
+margin_right = 192.0
+margin_bottom = 332.0
+custom_fonts/font = SubResource( 2 )
+text = "QUIT"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
