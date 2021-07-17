@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Elisa's Quest_village_theme.wav-44e18df4b383a755f02de0d674982ae6.sample"
+
+[deps]
+
+source_file="res://_Assets/_sfx/Elisa's Quest_village_theme.wav"
+dest_files=[ "res://.import/Elisa's Quest_village_theme.wav-44e18df4b383a755f02de0d674982ae6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

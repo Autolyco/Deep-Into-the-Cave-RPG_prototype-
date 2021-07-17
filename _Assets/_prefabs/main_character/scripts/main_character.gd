@@ -4,7 +4,7 @@ extends KinematicBody2D
 
 signal walk_trigger
 
-const speed = 17.5
+const speed = 14.5
 
 var is_pause:bool = false
 var is_talking:bool = false
@@ -122,7 +122,7 @@ func control_menu():
 
 func _animations(movement:Vector2):
 	
-	print(movement)
+	
 	
 	if movement != Vector2(0,0):
 		if last_movement == '' :

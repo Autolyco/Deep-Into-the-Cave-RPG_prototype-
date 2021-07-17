@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="RPG_prototype"
-run/main_scene="res://_Assets/_scenes/World.tscn"
+run/main_scene="res://_Assets/_scenes/Kulombia/kulombia_forest.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SfxManager="*res://_Assets/_sfx/SFX_manager.tscn"
 
 [display]
 
@@ -66,5 +70,6 @@ quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 quality/intended_usage/framebuffer_allocation=1
 quality/intended_usage/framebuffer_allocation.mobile=1
+2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false

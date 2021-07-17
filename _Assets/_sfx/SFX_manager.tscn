@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://_Assets/_sfx/kulombia_theme.wav" type="AudioStream" id=1]
+[ext_resource path="res://_Assets/_sfx/magic.wav" type="AudioStream" id=2]
+
+[node name="SFX_manager" type="Node"]
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="dialog_interaction" type="AudioStreamPlayer" parent="SFX"]
+bus = "SFX"
+
+[node name="blocked_wall" type="AudioStreamPlayer" parent="SFX"]
+bus = "SFX"
+
+[node name="attack" type="AudioStreamPlayer" parent="SFX"]
+bus = "SFX"
+
+[node name="hurt" type="AudioStreamPlayer" parent="SFX"]
+bus = "SFX"
+
+[node name="magic" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 2 )
+bus = "SFX"
+
+[node name="heal" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="OST" type="Node" parent="."]
+
+[node name="kulombia_village" type="AudioStreamPlayer" parent="OST"]
+stream = ExtResource( 1 )
+bus = "OST"
+
+[node name="combat_01" type="AudioStreamPlayer" parent="OST"]
+bus = "OST"
